@@ -3,6 +3,21 @@ curity
 
 A Java library with data structures developed for various projects. Many of the structures have to do with concurrency.
 
+**Classes**
+- AtomicStack *- a thread-safe wait-free stack implementation.*
+- BlockableQueue *- a queue implementation which can toggle between blocking and non-blocking.*
+- ConcurrentSet *- a thread-safe set of objects.*
+- Files *- file copying functionality.*
+- Gate *- a lock that stops all waiting threads until one of the threads open the gate. An item is held behind the gate and all blocking threads receive that object upon opening.*
+- Ref *- an interface that merely holds some value (get/set methods).*
+- LockRef *- Ref implementation that is an efficient reentrant read-write lock. Readers don't block each other, but a write will.*
+- NonNullRef *- Ref implementation that blocks until a non-null value is set*
+- Notifier *- A dynamic proxy class used for notifying a list of listeners. Objects of the same type are added, when the proxy().METHOD is called, it calls METHOD on all objects added to the notifier.*
+- Release *- A utility for unblocking blocking calls.*
+- Signal *- Provides a way for several threads to send signals between each other.*
+- Sleepable *-Any entity which blocks its thread for some period of time or until some event occurs and can be nicely awoken.*
+- State *- A thread-safe state machine used for keeping track of the state of some object, waiting for a state to occur, and changing states.*
+
 **Example**
 
 ```java
