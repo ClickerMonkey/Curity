@@ -30,6 +30,18 @@ notifier.proxy().onBar();
 
 https://github.com/ClickerMonkey/curity/tree/master/build
 
+**Projects using testility:**
+- [taskaroo](https://github.com/ClickerMonkey/taskaroo)
+- [statastic](https://github.com/ClickerMonkey/statastic)
+- [daperz](https://github.com/ClickerMonkey/daperz)
+- [surfice](https://github.com/ClickerMonkey/surfice)
+- [zource](https://github.com/ClickerMonkey/zource)
+- [falcon](https://github.com/ClickerMonkey/falcon)
+- [buffero](https://github.com/ClickerMonkey/buffero)
+
+**Dependencies**
+- [testility](https://github.com/ClickerMonkey/testility) *for unit tests*
+
 **Testing Examples**
 
 https://github.com/ClickerMonkey/curity/tree/master/Testing/org/magnos/util
