@@ -27,8 +27,8 @@ notifier.proxy().onBar();
 ```
 
 **Builds**
-
-https://github.com/ClickerMonkey/curity/tree/master/build
+- [curity-1.0.0.jar](https://github.com/ClickerMonkey/curity/blob/master/build/curity-1.0.0.jar?raw=true)
+- [curity-src-1.0.0.jar](https://github.com/ClickerMonkey/curity/blob/master/build/curity-src-1.0.0.jar?raw=true) *- includes source code*
 
 **Projects using curity:**
 - [taskaroo](https://github.com/ClickerMonkey/taskaroo)
@@ -43,5 +43,4 @@ https://github.com/ClickerMonkey/curity/tree/master/build
 - [testility](https://github.com/ClickerMonkey/testility) *for unit tests*
 
 **Testing Examples**
-
-https://github.com/ClickerMonkey/curity/tree/master/Testing/org/magnos/util
+- [Testing/org/magnos/util](https://github.com/ClickerMonkey/curity/tree/master/Testing/org/magnos/util)
