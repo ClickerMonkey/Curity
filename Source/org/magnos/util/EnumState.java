@@ -69,7 +69,7 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Instantiates a new State machine given its initial state(s).
+	 * Instantiates a new State machine given its initial state.
 	 * 
 	 * @param initialState
 	 * 		The initial state(s) of the machine.
@@ -80,12 +80,12 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Overrides the current state(s) with the given state(s). If any thread is 
-	 * waiting for one of the provided states they will be notified and that
-	 * thread will resume execution. 
+	 * Overrides the current state with the given state. If any thread is 
+	 * waiting for the provided state they will be notified and that thread
+	 * will resume execution. 
 	 * 
 	 * @param newState
-	 * 		The new state(s) of the machine.
+	 * 		The new state of the machine.
 	 */
 	public void set(E newState) 
 	{
@@ -96,7 +96,7 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Removes all states from this machine.
+	 * Removes state (set to null) from this machine.
 	 */
 	public void clear() 
 	{
@@ -107,10 +107,10 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Returns the state(s) of the machine.
+	 * Returns the state of the machine.
 	 * 
 	 * @return
-	 * 		The current state(s) of the machine.
+	 * 		The current state of the machine.
 	 */
 	public E get() 
 	{
@@ -123,9 +123,9 @@ public class EnumState<E extends Enum<E>>
 	 * Determines whether this machine has the exact states given.
 	 * 
 	 * @param exactState
-	 * 		The set of states this machine must have exactly.
+	 * 		The state this machine must have exactly.
 	 * @return
-	 * 		True if this machine has the exact states, otherwise false.
+	 * 		True if this machine has the exact state, otherwise false.
 	 */
 	public boolean equals(E exactState) 
 	{
@@ -140,9 +140,9 @@ public class EnumState<E extends Enum<E>>
 	 * 
 	 * <h1>Example</h1>
 	 * <pre>
-	 * State s = ...
+	 * EnumState&ltProcessState&gt s = ...
 	 * // if the state is running or waiting, set it to paused
-	 * if (s.cas(Running | Waiting, Paused)) {
+	 * if (s.cas(ProcessState.Running, ProcessState.Paused)) {
 	 * 	// state has been successfully paused!
 	 * }
 	 * </pre>
@@ -167,14 +167,13 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Indefinitely waits for any of the given states to be reached. If the
-	 * current thread is interrupted this will return before the state is 
-	 * reached.
+	 * Indefinitely waits for the given state to be reached. If the current
+	 * thread is interrupted this will return before the state is reached.
 	 * 
 	 * @param desiredState
-	 * 		The set of states to wait for until any exist.
+	 * 		The state to wait for.
 	 * @return
-	 * 		True if any of the given states are reached, otherwise false.
+	 * 		True if the given state is reached, otherwise false.
 	 */
 	public boolean waitFor(E desiredState) 
 	{
@@ -196,18 +195,18 @@ public class EnumState<E extends Enum<E>>
 	}
 
 	/**
-	 * Waits for any of the given states to be reached, or for a specific amount
-	 * of time to elapse. If the current thread is interrupted or the thread
-	 * has waited more than the provided timeout time this will return before 
-	 * the state is reached.
+	 * Waits for the given state to be reached, or for a specific amount of
+	 * time to elapse. If the current thread is interrupted or the thread has
+	 * waited more than the provided timeout time this will return before the 
+	 * state is reached.
 	 * 
 	 * @param desiredState
-	 * 		The set of states to wait for until any exist.
+	 * 		The state to wait for.
 	 * @param timeout
-	 * 		The maximum amount of time in milliseconds to wait for any of the
-	 * 		given states.
+	 * 		The maximum amount of time in milliseconds to wait for the given 
+	 * 		state.
 	 * @return
-	 * 		True if any of the given states are reached, otherwise false.
+	 * 		True if the given state is reached, otherwise false.
 	 */
 	public boolean waitFor(E desiredState, long timeout) 
 	{
@@ -238,9 +237,9 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Notifies all threads waiting for a set of states. The waiting threads
-	 * will be awaken and one at a time they will check the state of the machine
-	 * for their desired set of states.
+	 * Notifies all threads waiting for a state. The waiting threads will be
+	 * woken and one at a time they will check the state of the machine for
+	 * their desired state.
 	 */
 	public void wakeup()
 	{
@@ -250,23 +249,23 @@ public class EnumState<E extends Enum<E>>
 	}
 	
 	/**
-	 * Overrides the current state(s) with the given state(s). This will not
-	 * obtain the state machine lock before setting the state. This should
-	 * only be used if the invoking thread already has synchronized on this
+	 * Overrides the current state with the given state. This will not obtain
+	 * the state machine lock before setting the state. This should only be
+	 * used if the invoking thread already has synchronized on this state
 	 * state and will invoke wakeup() before the synchronized block ends.
 	 * 
 	 * <h1>Example</h1>
 	 * <pre>
-	 * State s = ...
+	 * EnumState&ltProcessState&gt s = ...
 	 * synchronized (s) {
-	 * 	s.lazySet(Running);
+	 * 	s.lazySet(ProcessState.Running);
 	 * 	// other processing...
 	 * 	s.wakeup();
 	 * }
 	 * </pre>
 	 * 
 	 * @param newState
-	 * 		The new state(s) of the machine.
+	 * 		The new state of the machine.
 	 */
 	public void lazySet(E newState) 
 	{
@@ -275,28 +274,31 @@ public class EnumState<E extends Enum<E>>
 	
 	/**
 	 * Compares the current state to the given state without blocking.
+	 * 
+	 * @return 
+	 * 		True if the current state matches the given state.
 	 */
-	private boolean lazyEquals(E otherState)
+	public boolean lazyEquals(E otherState)
 	{
 		return (state == otherState);
 	}
 	
 	/**
-	 * Returns the state(s) of the machine. This will not obtain the state 
-	 * machine lock before setting the state. This should only be used if the 
-	 * invoking thread already has synchronized on this state.
+	 * Returns the state of the machine. This will not obtain the state machine 
+	 * lock before setting the state. This should only be used if the invoking 
+	 * thread already has synchronized on this state.
 	 * 
 	 * <h1>Example</h1>
 	 * <pre>
-	 * State s = ...
+	 * EnumState&ltProcessState&gt s = ...
 	 * synchronized (s) {
-	 * 	int states = s.lazyGet();
+	 * 	ProcessState state = s.lazyGet();
 	 * 	// other processing...
 	 * }
 	 * </pre>
 	 * 
 	 * @return
-	 * 		The current state(s) of the machine.
+	 * 		The current state of the machine.
 	 */
 	public E lazyGet() 
 	{
@@ -305,21 +307,21 @@ public class EnumState<E extends Enum<E>>
 	
 	/**
 	 * Waits for any change in state and returns the new state. If the current
-	 * thread is interrupted this may return the original state(s). This may be
-	 * useful if a thread is waiting for an exact set of states.
+	 * thread is interrupted this may return the original state. This may be
+	 * useful if a thread is waiting for a specific state.
 	 * 
 	 * <h1>Example</h1>
 	 * <pre>
-	 * State s = ...
+	 * EnumState&ltProcessState&gt s = ...
 	 * synchronized (s) {
-	 * 	while (!s.equals(Waiting)) {
+	 * 	while (!s.equals(ProcessState.Waiting)) {
 	 * 		s.waitForChange();
 	 * 	}
 	 * }
 	 * </pre>
 	 * 
 	 * @return
-	 * 		The state(s) of the machine.
+	 * 		The state of the machine.
 	 */
 	public E waitForChange() 
 	{
