@@ -21,8 +21,8 @@ A Java library with data structures developed for various projects. Many of the 
 **Example**
 
 ```java
-/** Snippet with the utilities that ARE NOT related to concurrency. See JavaDocs to view 
-    snippets of concurrent classes. **/
+/** Snippet with the utilities that ARE NOT related to concurrency. See JavaDocs to 
+    view snippets of concurrent classes. **/
 
 // Copy one file/dir to another file/dir.
 Files.copy(new File("src_dir"), new File("dst_dir"));
