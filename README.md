@@ -30,7 +30,7 @@ notifier.proxy().onBar();
 
 https://github.com/ClickerMonkey/curity/tree/master/build
 
-**Projects using testility:**
+**Projects using curity:**
 - [taskaroo](https://github.com/ClickerMonkey/taskaroo)
 - [statastic](https://github.com/ClickerMonkey/statastic)
 - [daperz](https://github.com/ClickerMonkey/daperz)
