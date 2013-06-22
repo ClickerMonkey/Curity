@@ -17,6 +17,10 @@ A Java library with data structures developed for various projects. Many of the 
 - Signal *- Provides a way for several threads to send signals between each other.*
 - Sleepable *-Any entity which blocks its thread for some period of time or until some event occurs and can be nicely awoken.*
 - State *- A thread-safe state machine used for keeping track of the state of some object, waiting for a state to occur, and changing states.*
+- EnumState *- Similar to State, but holds a single state (enum) opposed to multiple states*
+
+**Documentation**
+- [JavaDoc](http://clickermonkey.github.com/curity/)
 
 **Example**
 
