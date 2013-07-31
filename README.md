@@ -1,6 +1,8 @@
 curity
 ======
 
+![Stable](http://i4.photobucket.com/albums/y123/Freaklotr4/stage_stable.png)
+
 A Java library with data structures developed for various projects. Many of the structures have to do with concurrency.
 
 **Classes**
