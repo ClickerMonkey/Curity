@@ -22,7 +22,7 @@ A Java library with data structures developed for various projects. Many of the 
 - EnumState *- Similar to State, but holds a single state (enum) opposed to multiple states*
 
 **Documentation**
-- [JavaDoc](http://gh.magnos.org/?r=http://clickermonkey.github.com/curity/)
+- [JavaDoc](http://gh.magnos.org/?r=http://clickermonkey.github.com/Curity/)
 
 **Example**
 
@@ -48,20 +48,20 @@ notifier.proxy().onBar();
 ```
 
 **Builds**
-- [curity-1.0.0.jar](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/curity/blob/master/build/curity-1.0.0.jar?raw=true)
-- [curity-src-1.0.0.jar](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/curity/blob/master/build/curity-src-1.0.0.jar?raw=true) *- includes source code*
+- [curity-1.0.0.jar](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Curity/blob/master/build/curity-1.0.0.jar?raw=true)
+- [curity-src-1.0.0.jar](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Curity/blob/master/build/curity-src-1.0.0.jar?raw=true) *- includes source code*
 
 **Projects using curity:**
-- [taskaroo](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/taskaroo)
-- [statastic](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/statastic)
-- [daperz](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/daperz)
-- [surfice](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/surfice)
-- [zource](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/zource)
-- [falcon](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/falcon)
-- [buffero](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/buffero)
+- [Taskaroo](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Taskaroo)
+- [Statastic](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Statastic)
+- [Daperz](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Daperz)
+- [Surfice](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Surfice)
+- [Zource](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Zource)
+- [Falcon](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Falcon)
+- [Buffero](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Buffero)
 
 **Dependencies**
-- [testility](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/testility) *for unit tests*
+- [Testility](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Testility) *for unit tests*
 
 **Testing Examples**
-- [Testing/org/magnos/util](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/curity/tree/master/Testing/org/magnos/util)
+- [Testing/org/magnos/util](http://gh.magnos.org/?r=https://github.com/ClickerMonkey/Curity/tree/master/Testing/org/magnos/util)
